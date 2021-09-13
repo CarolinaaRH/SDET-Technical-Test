@@ -1,0 +1,21 @@
+const objA = {a:10 , b:20 , c:30 };
+const objB = {a:3 , c: 6, d:3 };
+console.log(combine(objA,objB));
+
+function combine(objA, objB) {
+    let objC = {};
+    Object.keys(objA).forEach(
+        elemenA => {
+            Object.keys(objB).forEach(
+              elemenB => {
+                  if (elemenA == elemenB){
+                    nilai = objA[elemenA] + objB[elemenB]  
+                    objC[elemenA] = nilai
+                  }
+              }
+            )
+        }
+    )
+    const gabungan = Object.assign(objA, objB)
+    return Object.assign(gabungan, objC);
+}
